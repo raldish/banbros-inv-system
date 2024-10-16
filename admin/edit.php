@@ -164,8 +164,8 @@
                     <td>
                     <select name="con_dition">
                         <option value="#">Select Condition</option>
-                        <option value="NOT DEFECTIVE" <?= ($row['con_dition'] == 'Not Defective') ? 'selected' : '' ?>>Not Defective</option>
-                        <option value="DEFECTIVE" <?= ($row['con_dition'] == 'Defective') ? 'selected' : '' ?>>Defective</option>
+                        <option value="GOOD" <?= ($row['con_dition'] == 'GOOD') ? 'selected' : '' ?>>GOOD</option>
+                        <option value="DEFECTED" <?= ($row['con_dition'] == 'DEFECTED') ? 'selected' : '' ?>>DEFECTED</option>
                     </select>
                     </td>
                     </tr>

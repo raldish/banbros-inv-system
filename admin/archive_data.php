@@ -244,7 +244,7 @@
                                 echo "<td>" . $row['con_dition'] . "</td>";
                                 echo "<td>" . $row['added_at'] . "</td>";
                                 if($display_edit_delete){
-                                    echo "<td align='right'>";
+                                    echo "<td align='center'>";
                                     echo "<a href='restore.php?restore=" . $row['ID'] . "' class='btn btn-success'><span class='fa fa-undo'></span></a>";
                                     echo " ";
                                     echo "<a href='delete_permanent.php?delete=" . $row['ID'] . "' class='btn btn-danger'><span class='fa fa-trash'></span></a>";

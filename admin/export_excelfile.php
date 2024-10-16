@@ -37,7 +37,6 @@
         foreach($data as $key=>$value){
             $output .='
                 <tr>
-                    <td>'.($key+1).'</td>
                     <td>'.$value['company_code'].'</td>
                     <td>'.$value['assigned_to'].'</td>
                     <td>'.$value['firstname'].'</td>

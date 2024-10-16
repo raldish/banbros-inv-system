@@ -47,8 +47,8 @@
                     <label for="con_dition">Status</label>
                     <select name="con_dition">
                     <option value="#">Select Status</option>
-                    <option value="NOT DEFECTIVE">NOT DEFECTIVE</option>
-                    <option value="DEFECTIVE">DEFECTIVE</option>
+                    <option value="GOOD">GOOD</option>
+                    <option value="DEFECTED">DEFECTED</option>
                     </select>
                     </td>
                 </tr>
