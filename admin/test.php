@@ -1,7 +1,9 @@
 <?php
+
+$id= $_GET['print'];
 // Include FPDF and FPDI
-require_once('PDF Generator/fpdf/fpdf.php');
-require_once('vendor/autoload.php'); // For FPDI
+require_once('../PDF Generator/fpdf/fpdf.php');
+require_once('../vendor/autoload.php'); // For FPDI
 
 use setasign\Fpdi\Fpdi;
 
@@ -9,7 +11,7 @@ use setasign\Fpdi\Fpdi;
 $pdf = new FPDI();
 
 // Set the source PDF file (in this case, "namefile.pdf")
-$pdf->setSourceFile('PDF Generator/Example-form.pdf');
+$pdf->setSourceFile('../PDF Generator/PROPERTY ACCOUNTABILITY RECEIPT AND TURNOVER FORM.pdf');
 
 // Import the first page of the PDF template
 $templateId = $pdf->importPage(1);
