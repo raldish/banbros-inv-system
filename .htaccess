@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^908fNgb36mFzOe1Tl9QiBQ==$ index.php?url=index.php [QSA,L]
+RewriteRule ^908fNgb36mFzOe1Tl9QiBQ==$ index.php?url=admin/index.php [QSA,L]
