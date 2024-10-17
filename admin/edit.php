@@ -118,7 +118,7 @@
                     </tr>
                     <tr>
                         <td>Company Code</td>
-                        <td><input type="text" value="<?=$row['company_code']; ?>" name="company_code" required></td>
+                        <td><input type="text" value="<?=$row['company_code']; ?>" name="company_code"></td>
                     </tr>
                     <tr>
                         <td>Employee #</td>
@@ -141,9 +141,9 @@
                     <td>
                     <select name="location_n">
                         <option value="#">Select Department</option>
-                        <option value="CORPORATE" <?= ($row['location_n'] == 'Corporate') ? 'selected' : '' ?>>Corporate</option>
-                        <option value="MARKETING" <?= ($row['location_n'] == 'Marketing') ? 'selected' : '' ?>>Marketing</option>
-                        <option value="ACCOUNTING" <?= ($row['location_n'] == 'Accounting') ? 'selected' : '' ?>>Accounting</option>
+                        <option value="CORPORATE" <?= ($row['location_n'] == 'CORPORATE') ? 'selected' : '' ?>>Corporate</option>
+                        <option value="MARKETING" <?= ($row['location_n'] == 'MARKETING') ? 'selected' : '' ?>>Marketing</option>
+                        <option value="ACCOUNTING" <?= ($row['location_n'] == 'ACCOUNTING') ? 'selected' : '' ?>>Accounting</option>
                     </select>
                     </td>
                     </tr>
@@ -164,8 +164,8 @@
                     <td>
                     <select name="con_dition">
                         <option value="#">Select Condition</option>
-                        <option value="GOOD" <?= ($row['con_dition'] == 'GOOD') ? 'selected' : '' ?>>GOOD</option>
-                        <option value="DEFECTED" <?= ($row['con_dition'] == 'DEFECTED') ? 'selected' : '' ?>>DEFECTED</option>
+                        <option value="GOOD" <?= ($row['con_dition'] == 'GOOD') ? 'selected' : '' ?>>Good</option>
+                        <option value="DEFECTED" <?= ($row['con_dition'] == 'DEFECTED') ? 'selected' : '' ?>>Defected</option>
                     </select>
                     </td>
                     </tr>
