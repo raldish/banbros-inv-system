@@ -125,17 +125,17 @@
     }
     
     h3, h5{
-        text-align: center;
+    text-align: center;
     }
 
     .footer {
-        position: absolute;
-        left: 0;
-        bottom: -279px;
-        width: 100%;
-        background-color: red;
-        color: white;
-        text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
     }
 </style>
     
@@ -248,15 +248,13 @@
                                     echo "<a href='restore.php?restore=" . $row['ID'] . "' class='btn btn-success'><span class='fa fa-undo'></span></a>";
                                     echo " ";
                                     echo "<a href='delete_permanent.php?delete=" . $row['ID'] . "' class='btn btn-danger'><span class='fa fa-trash'></span></a>";
-                                    echo "</td>";
                                 }
-                                echo "</tr>";
                             }
                             } else {
-                            echo "<tr><td colspan='7'>No archived data found.</td></tr>";
+                            echo "No archived data found.</td></tr>";
                             }
                         } else {
-                            echo "<tr><td colspan='7'>Error retrieving archived data: " . mysqli_error($conn) . "</td></tr>";
+                            echo "<tr><td>Error retrieving archived data: " . mysqli_error($conn) . "</td></tr>";
                         }
                         ?>
                     </tbody>

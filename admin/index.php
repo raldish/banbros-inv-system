@@ -110,17 +110,17 @@
     }
     
     h3, h5{
-        text-align: center;
+    text-align: center;
     }
 
     .footer {
-        position: sticky;
-        left: 0;
-        bottom: -60px;
-        width: 100%;
-        background-color: red;
-        color: white;
-        text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
     }
 </style>
     
