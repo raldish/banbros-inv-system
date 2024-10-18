@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 16, 2024 at 03:23 AM
+-- Generation Time: Oct 18, 2024 at 02:48 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -30,16 +30,16 @@ SET time_zone = "+00:00";
 CREATE TABLE `client` (
   `ID` int(11) NOT NULL,
   `company_code` varchar(50) NOT NULL,
-  `assigned_to` varchar(255) NOT NULL,
+  `assigned_to` varchar(50) NOT NULL,
   `location_n` varchar(20) NOT NULL,
-  `model_description` varchar(255) NOT NULL,
-  `serial_number` varchar(255) NOT NULL,
+  `model_description` varchar(50) NOT NULL,
+  `serial_number` varchar(50) NOT NULL,
   `added_at` datetime NOT NULL DEFAULT current_timestamp(),
-  `firstname` varchar(255) NOT NULL,
-  `middlename` varchar(255) NOT NULL,
-  `surname` varchar(255) NOT NULL,
-  `con_dition` varchar(255) NOT NULL,
-  `quantity` varchar(50) NOT NULL
+  `firstname` varchar(20) NOT NULL,
+  `middlename` varchar(20) NOT NULL,
+  `surname` varchar(20) NOT NULL,
+  `con_dition` varchar(20) NOT NULL,
+  `quantity` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -93,7 +93,6 @@ INSERT INTO `client` (`ID`, `company_code`, `assigned_to`, `location_n`, `model_
 (577, 'RETAIL-BCI044', '', 'ACCOUNTING', 'BAIJ82801625690763', 'ATLAS HD 276CG (MONITOR)', '0000-00-00 00:00:00', 'Ma Teresa', '', 'Reyna', 'GOOD', '1'),
 (578, 'RETAIL-BCI045', '', 'ACCOUNTING', 'DTVLASP03044700F4F9626', 'Veriton X4630G (PC)', '0000-00-00 00:00:00', 'Bianca Marie', '', 'Lamson', 'GOOD', '1'),
 (579, 'RETAIL-BCI046', '', 'ACCOUNTING', 'MMTX5SP002345023EA2X00', 'ACER SA22Q (MONITOR)', '0000-00-00 00:00:00', 'Bianca Marie', '', 'Lamson', 'GOOD', '1'),
-(580, 'CORP. 001', '', 'CORPORATE', 'E73801C5N940899', 'BROTHER DCP-L25400W', '0000-00-00 00:00:00', 'PRINTER', '', '', 'GOOD', '1'),
 (581, 'CORP. 002', '', 'CORPORATE', 'E74706J7H593947', 'BROTHER DCP-T300', '0000-00-00 00:00:00', 'PRINTER', '', '', 'GOOD', '1'),
 (582, 'CORP. 003', '', 'CORPORATE', 'E81773A3H236305', 'BROTHER MFC-J3540DW', '0000-00-00 00:00:00', 'PRINTER', '', '', 'GOOD', '1'),
 (583, 'CORP. 004', '', 'CORPORATE', 'E80726D4H141271', 'BROHER DCP-T720DW', '0000-00-00 00:00:00', 'PRINTER', '', '', 'GOOD', '1'),
@@ -103,7 +102,7 @@ INSERT INTO `client` (`ID`, `company_code`, `assigned_to`, `location_n`, `model_
 (587, 'CORP. 008', '', 'CORPORATE', 'NXEFASP00273203F4C6600', 'ACER Extensa 2519-C49F', '0000-00-00 00:00:00', 'OJT-Jc', '', '', 'GOOD', '1'),
 (588, 'CORP. 009', '', 'CORPORATE', 'NXVBNSP016642088EB3400', 'ACER TMP248-M-37M0', '0000-00-00 00:00:00', 'LAPTOP', '', '', 'DEFECTED', '1'),
 (589, 'CORP. 010', '', 'CORPORATE', 'E80732M0H187597', 'BROTHER MFC-T920DW', '0000-00-00 00:00:00', 'PRINTER', '', '', 'DEFECTED', '1'),
-(590, 'CORP. 011', '', 'CORPORATE', 'DTBC7SP0118410BC9F3000', 'ACER ASPIRE TC-860', '0000-00-00 00:00:00', 'Joseph', '', 'Espiritu', 'GOOD', '1'),
+(590, 'CORP. 011', '2131241', 'CORPORATE', 'DTBC7SP0118410BC9F3000', 'ACER ASPIRE TC-860', '0000-00-00 00:00:00', 'Joseph', 'Malakas', 'Espiritu', 'GOOD', '1'),
 (591, 'CORP. 012', '', 'CORPORATE', 'BBCA82509316690036', 'GAMDIAS ATLAS HD 236C', '0000-00-00 00:00:00', 'Joseph', '', 'Espiritu', 'GOOD', '1'),
 (592, 'CORP. 013', '', 'CORPORATE', 'D3292JA346525', 'ENVISION H716W', '0000-00-00 00:00:00', 'MONITOR', '', '', 'GOOD', '1'),
 (593, 'CORP. 014', '', 'CORPORATE', 'F4LMTF134284', 'ASUS VS197', '0000-00-00 00:00:00', 'MONITOR', '', '', 'GOOD', '1'),
@@ -152,17 +151,17 @@ INSERT INTO `client` (`ID`, `company_code`, `assigned_to`, `location_n`, `model_
 
 CREATE TABLE `tbl_archive` (
   `ID` int(11) NOT NULL,
-  `company_code` varchar(50) NOT NULL,
-  `assigned_to` varchar(255) NOT NULL,
+  `company_code` varchar(20) NOT NULL,
+  `assigned_to` varchar(50) NOT NULL,
   `location_n` varchar(20) NOT NULL,
-  `model_description` varchar(255) NOT NULL,
-  `serial_number` varchar(255) NOT NULL,
+  `model_description` varchar(50) NOT NULL,
+  `serial_number` varchar(50) NOT NULL,
   `added_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `firstname` varchar(255) NOT NULL,
-  `middlename` varchar(255) NOT NULL,
-  `surname` varchar(255) NOT NULL,
-  `con_dition` varchar(255) NOT NULL,
-  `quantity` varchar(50) NOT NULL
+  `firstname` varchar(20) NOT NULL,
+  `middlename` varchar(20) NOT NULL,
+  `surname` varchar(20) NOT NULL,
+  `con_dition` varchar(20) NOT NULL,
+  `quantity` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -170,8 +169,9 @@ CREATE TABLE `tbl_archive` (
 --
 
 INSERT INTO `tbl_archive` (`ID`, `company_code`, `assigned_to`, `location_n`, `model_description`, `serial_number`, `added_at`, `firstname`, `middlename`, `surname`, `con_dition`, `quantity`) VALUES
-(339, 'company_code', 'assigned_to', 'firstname', 'middlename', 'surname', '0000-00-00 00:00:00', 'model_description', 'serial_number', 'quantity', 'con_dition', 'added_at'),
-(533, 'company_code', 'assigned_to', 'location_n', 'model_description', 'serial_number', '0000-00-00 00:00:00', 'firstname', 'middlename', 'surname', 'con_dition', 'quantity');
+(580, 'CORP. 001', '', 'CORPORATE', 'E73801C5N940899', 'BROTHER DCP-L25400W', '0000-00-00 00:00:00', 'PRINTER', '', '', 'GOOD', '1'),
+(632, 'company_code', 'assigned_to', 'firstname', 'middlename', 'surname', '0000-00-00 00:00:00', 'model_description', 'serial_number', 'quantity', 'con_dition', 'added_at'),
+(633, 'company_code', 'assigned_to', 'location_n', 'model_description', 'serial_number', '0000-00-00 00:00:00', 'firstname', 'middlename', 'surname', 'con_dition', 'quantity');
 
 -- --------------------------------------------------------
 
@@ -181,9 +181,9 @@ INSERT INTO `tbl_archive` (`ID`, `company_code`, `assigned_to`, `location_n`, `m
 
 CREATE TABLE `user` (
   `ID` int(11) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `name` varchar(255) NOT NULL,
+  `username` varchar(20) NOT NULL,
+  `password` varchar(20) NOT NULL,
+  `name` varchar(20) NOT NULL,
   `role` enum('admin','user') DEFAULT 'user'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -225,13 +225,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `client`
 --
 ALTER TABLE `client`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=630;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=634;
 
 --
 -- AUTO_INCREMENT for table `tbl_archive`
 --
 ALTER TABLE `tbl_archive`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=534;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=634;
 
 --
 -- AUTO_INCREMENT for table `user`
