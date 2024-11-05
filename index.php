@@ -51,7 +51,7 @@
                             <td><button type="submit" class="btn btn-primary btn-block" name="login">Login</button></td>
                         </tr>
                         <tr>
-                            <td>Don't have an account? <a href="signup.php" data-toggle="modal" data-target="#signupModal">Sign up</a></td>
+                            <td>Don't have an account? <a href="signup.php" data-toggle="modal" data-target="#signupModal">Sign up</a><a href="forgot_password.php" style="float:right;">Forgot Password</a></td>
                         </tr>
                     </table>
                 </form>
