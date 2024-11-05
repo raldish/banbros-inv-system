@@ -149,7 +149,9 @@
         <?php if($_SESSION['role'] == 'admin'){ ?>
         <li><a href="archive_data.php" class="btn custom-btn"><span class="fa fa-archive" style="color:white;"></span> Archive</a></li>
         <?php } ?>
+        <?php if($_SESSION['role'] == 'admin'){ ?>
         <li><a href="export_excelfile.php?export" data-toggle="modal" class="btn custom-btn"><span class="fa fa-file-excel" style="color:white;"></span> Export</a></li>
+        <?php } ?>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
