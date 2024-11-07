@@ -188,15 +188,23 @@
             <div class="container">
                 <?php
                     if(isset($_SESSION['success'])){
-                        echo "<div style='background:green; color:#fff; padding:3px; border-radius:25px; font-size:15px; text-align:center;'>".$_SESSION['success']."</div>";
+                        echo "<div id='success-message' style='background:green; color:#fff; padding:3px; border-radius:25px; font-size:15px; text-align:center;'>".$_SESSION['success']."</div>";
                         unset($_SESSION['success']);
                     }
                     if(isset($_SESSION['error'])){
-                        echo "<div style='background:red; color:#fff; padding:3px; border-radius:25px; font-size:15px; text-align:center;'>".$_SESSION['error']."</div>";
+                        echo "<div id='error-message' style='background:red; color:#fff; padding:3px; border-radius:25px; font-size:15px; text-align:center;'>".$_SESSION['error']."</div>";
                         unset($_SESSION['error']);
                     }
                 ?>
-            </div> 
+            </div>
+
+            <script>
+                setTimeout(function() {
+                    document.getElementById('success-message').style.display = 'none';
+                    document.getElementById('error-message').style.display = 'none';
+                }, 4000); // 4000 milliseconds = 4 seconds
+            </script>
+
                 <table class="table table-bordered" id="example" width="100%">
                     <thead>
                         <tr>
@@ -222,6 +230,9 @@
                             $sql = "SELECT * FROM client ORDER BY company_code ASC";
                             $query= $conn->query($sql); 
                             $count =1;
+                            $total_employees = mysqli_num_rows($query); // Get the total number of employees
+                            $total_good = 0;
+                            $total_defected = 0;
                             while($row = $query->fetch_assoc()){
                         ?>
                             <tr>
@@ -237,6 +248,13 @@
                                 <td><?=$row['quantity']?></td>
                                 <td><?=$row['con_dition']?></td>
                                 <td><?=$row['added_at']?></td>
+                                <?php 
+                                    if($row['con_dition'] == 'GOOD'){
+                                        $total_good++;
+                                    } elseif($row['con_dition'] == 'DEFECTED'){
+                                        $total_defected++;
+                                    }
+                                ?>
                                 <?php if($_SESSION['role'] == 'admin'){ ?>
                                 <td align="center">
                                     <a href="edit.php?edit=<?=$row['ID']; ?>" class="btn btn-success"><span class="fa fa-edit"></span></a>
@@ -249,10 +267,37 @@
 
                         <?php } ?>
                     </tbody>
+                    <!-- Modal code --> 
+                    <td colspan="13">
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
+                        View Result Status
+                    </button>
+                    </td>
+
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Employee Status</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Number of Employees: <?=$total_employees?></p>
+                                    <p>Total GOOD: <?=$total_good?></p>
+                                    <p>Total DEFECTED: <?=$total_defected?></p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </table>
+            </div>
         </div>
     </div>
-</div>
 <br><br>
 <div class="footer">
     <div class="panel-heading" style="color:white;background:#338FBB;"><h5>Made by: <a href="https://github.com/raldish" style="color:#e399a5;"><i class="fa fa-github" style="font-size:35px;color:white"></i>Jayrald Pelegrino</a></h5></div></div>
