@@ -191,7 +191,36 @@
     }
     // End of PHP code
     ?>
+    
         <div class="panel-body">
+
+        <?php
+            // Delete archived data older than 3 days
+            $query = "DELETE FROM tbl_archive WHERE deleted_at < NOW()";
+            mysqli_query($conn, $query);
+            
+            // Get the names of individuals who will be deleted soon
+            $query = "SELECT firstname, middlename, surname, DATEDIFF(deleted_at, NOW()) AS days_remaining FROM tbl_archive WHERE DATEDIFF(deleted_at, NOW()) <= 3";
+            $result = mysqli_query($conn, $query);
+            
+            // Display notification if data will be deleted soon
+            if (mysqli_num_rows($result) > 0) {
+                echo "<div id='notification' class='alert alert-warning text-center d-flex justify-content-center align-items-center' role='alert'>";
+                echo "The following individuals will be permanently deleted in the next 3 days:<br>";
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo "<span style='color: red'>" . $row['firstname'] . " " . $row['middlename'] . " " . $row['surname'] . "</span> (in " . $row['days_remaining'] . " days)<br>";
+                }
+                echo "</div>";
+                
+                // Set a timeout function to close the notification after 6 minutes
+                echo "<script>
+                        setTimeout(function() {
+                            document.getElementById('notification').style.display = 'none';
+                        }, 10000); // 10000 milliseconds = 10 seconds
+                    </script>";
+            }
+        ?>
+
             <div class="modal-body">
                 <table class="table table-bordered" id="example" width="100%">
                     <thead>

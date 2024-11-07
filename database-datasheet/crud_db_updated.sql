@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 07, 2024 at 02:18 PM
+-- Generation Time: Nov 07, 2024 at 04:25 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -94,13 +94,11 @@ INSERT INTO `client` (`ID`, `company_code`, `assigned_to`, `location_n`, `model_
 (577, 'RETAIL-BCI044', '', 'ACCOUNTING', 'BAIJ82801625690763', 'ATLAS HD 276CG (MONITOR)', '0000-00-00 00:00:00', 'Ma Teresa', '', 'Reyna', 'GOOD', '1', 0),
 (578, 'RETAIL-BCI045', '', 'ACCOUNTING', 'DTVLASP03044700F4F9626', 'Veriton X4630G (PC)', '0000-00-00 00:00:00', 'Bianca Marie', '', 'Lamson', 'GOOD', '1', 0),
 (579, 'RETAIL-BCI046', '', 'ACCOUNTING', 'MMTX5SP002345023EA2X00', 'ACER SA22Q (MONITOR)', '0000-00-00 00:00:00', 'Bianca Marie', '', 'Lamson', 'GOOD', '1', 0),
-(580, 'CORP. 001', '', 'CORPORATE', 'E73801C5N940899', 'BROTHER DCP-L25400W', '0000-00-00 00:00:00', 'PRINTER', '', '', 'GOOD', '1', 0),
-(581, 'CORP. 002', '', 'CORPORATE', 'E74706J7H593947', 'BROTHER DCP-T300', '0000-00-00 00:00:00', 'PRINTER', '', '', 'GOOD', '1', 0),
-(582, 'CORP. 003', '', 'CORPORATE', 'E81773A3H236305', 'BROTHER MFC-J3540DW', '0000-00-00 00:00:00', 'PRINTER', '', '', 'GOOD', '1', 0),
+(581, 'CORP. 002', '', 'CORPORATE', 'E74706J7H593947', 'BROTHER DCP-T300', '0000-00-00 00:00:00', 'PRINTER', '', '', 'GOOD', '1', 1),
+(582, 'CORP. 003', '', 'CORPORATE', 'E81773A3H236305', 'BROTHER MFC-J3540DW', '0000-00-00 00:00:00', 'PRINTER', '', '', 'DEFECTED', '1', 0),
 (583, 'CORP. 004', '', 'CORPORATE', 'E80726D4H141271', 'BROHER DCP-T720DW', '0000-00-00 00:00:00', 'PRINTER', '', '', 'GOOD', '1', 0),
 (584, 'CORP. 005', '', 'CORPORATE', 'E78947F8H948549', 'BROTHER MFC-T4500DW', '0000-00-00 00:00:00', 'PRINTER', '', '', 'GOOD', '1', 0),
 (585, 'CORP. 006', '', 'CORPORATE', 'NXBNSP0036470AAF1340', 'ACER TMP248-M-36KA', '0000-00-00 00:00:00', 'OJT-Rhen', 'B', 'Fernandez', 'GOOD', '1', 0),
-(586, 'sadas', '32024023', 'CORPORATE', 'NXEG8SP00T10415ED73400', 'ACER EX215-52-35FY', '0000-00-00 00:00:00', 'Jayrald', 'Lato', 'Pelegrinos', 'GOOD', '1', 1),
 (587, 'CORP. 008', '', 'CORPORATE', 'NXEFASP00273203F4C6600', 'ACER Extensa 2519-C49F', '0000-00-00 00:00:00', 'OJT-Jc', '', '', 'GOOD', '1', 0),
 (588, 'CORP. 009', '', 'CORPORATE', 'NXVBNSP016642088EB3400', 'ACER TMP248-M-37M0', '0000-00-00 00:00:00', 'LAPTOP', '', '', 'DEFECTED', '1', 0),
 (589, 'CORP. 010', '', 'CORPORATE', 'E80732M0H187597', 'BROTHER MFC-T920DW', '0000-00-00 00:00:00', 'PRINTER', '', '', 'DEFECTED', '1', 0),
@@ -143,7 +141,8 @@ INSERT INTO `client` (`ID`, `company_code`, `assigned_to`, `location_n`, `model_
 (626, 'CORP.047', '', 'CORPORATE', 'NXHUQSP005113008FB2N00', 'ACER ASPIRE A514-53', '0000-00-00 00:00:00', 'Jhulles', '', '', 'GOOD', '1', 0),
 (627, 'CORP.048', '', 'CORPORATE', 'NXEFASP00271501D706600', 'ACER EX2519-C49F', '0000-00-00 00:00:00', 'Efjay', '', 'Manalastas', 'GOOD', '1', 0),
 (628, 'CORP.049', '', 'CORPORATE', 'D20501966', 'HIKVISION INTERACTIVE TABLET', '0000-00-00 00:00:00', 'ADMIN', '', '', 'GOOD', '1', 0),
-(629, 'CORP.050', '', 'CORPORATE', 'AH0803784', 'HIKVISION INTERACTIVE FLAT PANEL', '0000-00-00 00:00:00', 'ADMIN', '', '', 'GOOD', '1', 0);
+(629, 'CORP.050', '', 'CORPORATE', 'AH0803784', 'HIKVISION INTERACTIVE FLAT PANEL', '0000-00-00 00:00:00', 'ADMIN', '', '', 'GOOD', '1', 0),
+(635, '2541NASDASE2', '2131231', 'ACCOUNTING', '2311NXN2N13N213NX', '3213564N6N54542322', '2024-11-07 21:11:36', 'Jayrald', 'Lato', 'Pelegrinos', 'GOOD', '2', 0);
 
 -- --------------------------------------------------------
 
@@ -164,17 +163,19 @@ CREATE TABLE `tbl_archive` (
   `surname` varchar(255) NOT NULL,
   `con_dition` varchar(255) NOT NULL,
   `quantity` varchar(50) NOT NULL,
-  `cost` int(50) NOT NULL
+  `cost` int(50) NOT NULL,
+  `deleted_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbl_archive`
 --
 
-INSERT INTO `tbl_archive` (`ID`, `company_code`, `assigned_to`, `location_n`, `model_description`, `serial_number`, `added_at`, `firstname`, `middlename`, `surname`, `con_dition`, `quantity`, `cost`) VALUES
-(631, 'company_code', 'assigned_to', 'location_n', 'model_description', 'serial_number', '0000-00-00 00:00:00', 'firstname', 'middlename', 'surname', 'con_dition', 'quantity', 0),
-(632, 'company_code', 'assigned_to', 'firstname', 'middlename', 'surname', '0000-00-00 00:00:00', 'model_description', 'serial_number', 'quantity', 'con_dition', 'added_at', 0),
-(633, '2541NASDASE2', '2131231', 'ACCOUNTING', '2311NXN2N13N213NX', '3213564N6N54542322', '2024-11-07 21:11:36', 'Jayrald', 'Lato', 'Pelegrinos', 'GOOD', '2', 0);
+INSERT INTO `tbl_archive` (`ID`, `company_code`, `assigned_to`, `location_n`, `model_description`, `serial_number`, `added_at`, `firstname`, `middlename`, `surname`, `con_dition`, `quantity`, `cost`, `deleted_at`) VALUES
+(580, 'CORP. 001', '', 'CORPORATE', 'E73801C5N940899', 'BROTHER DCP-L25400W', '0000-00-00 00:00:00', 'PRINTER', '', '', 'GOOD', '1', 0, NULL),
+(631, 'company_code', 'assigned_to', 'location_n', 'model_description', 'serial_number', '2024-11-07 22:58:59', 'firstname', 'middlename', 'surname', 'con_dition', 'quantity', 0, '2024-11-07 23:58:48'),
+(632, 'company_code', 'assigned_to', 'firstname', 'middlename', 'surname', '0000-00-00 00:00:00', 'model_description', 'serial_number', 'quantity', 'con_dition', 'added_at', 0, NULL),
+(637, '2541NASDASE', '12312421321', 'CORPORATE', '2311NXN2N13N213NX2', '23131-225NSAD4', '2024-11-07 22:40:09', 'Jayrald', 'Lato', 'Pelegrino', 'GOOD', '1', 0, '2024-11-10 23:02:41');
 
 -- --------------------------------------------------------
 
@@ -230,13 +231,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `client`
 --
 ALTER TABLE `client`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=634;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=638;
 
 --
 -- AUTO_INCREMENT for table `tbl_archive`
 --
 ALTER TABLE `tbl_archive`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=634;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=638;
 
 --
 -- AUTO_INCREMENT for table `user`
