@@ -99,7 +99,7 @@ if (isset($_POST['forgot_password'])) {
                             <td><button type="submit" class="btn btn-danger btn-block" name="forgot_password" >Reset Password</button></td>
                         </tr>
                         <tr>
-                            <td>Do you remember an account? <a href="index.php">Sign in</a></td>
+                            <td>Do you remember your account? <a href="index.php">Sign in</a></td>
                         </tr>
                     </table>
                 </form>
