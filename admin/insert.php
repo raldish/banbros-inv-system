@@ -10,6 +10,7 @@
         $location_n = $_POST['location_n'];
         $model_description = $_POST['model_description'];
         $serial_number = $_POST['serial_number'];
+        $cost = $_POST['cost'];
         $quantity = $_POST['quantity'];
         $con_dition = $_POST['con_dition'];
 
@@ -19,8 +20,8 @@
         if($query->num_rows > 0){
             $_SESSION['error'] = "Record already exists!!";
         }else{
-            $sql = "INSERT INTO client (company_code, assigned_to, firstname, middlename, surname, location_n, model_description, serial_number, quantity, con_dition) 
-            VALUES ('$company_code', '$assigned_to', '$firstname', '$middlename', '$username', '$location_n', '$model_description', '$serial_number', '$quantity', '$con_dition')";
+            $sql = "INSERT INTO client (company_code, assigned_to, firstname, middlename, surname, location_n, model_description, serial_number, cost, quantity, con_dition) 
+            VALUES ('$company_code', '$assigned_to', '$firstname', '$middlename', '$surname', '$location_n', '$model_description', '$serial_number', '$cost', '$quantity', '$con_dition')";
             if($conn->query($sql)){
                 $_SESSION['success'] = "Record has been inserted successfully";
             }else{

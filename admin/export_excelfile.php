@@ -23,6 +23,7 @@
                 <th>Location</th>
                 <th>Model Description</th>
                 <th>Serial Number</th>
+                <th>Cost</th>
                 <th>Quantity</th>
                 <th>Status</th>
                 <th>Added at</th>
@@ -45,6 +46,7 @@
                     <td>'.$value['location_n'].'</td>
                     <td>'.$value['model_description'].'</td>
                     <td>'.$value['serial_number'].'</td>
+                    <td>'.$value['cost'].'</td>
                     <td>'.$value['quantity'].'</td>
                     <td>'.$value['con_dition'].'</td>
                     <td>'.$value['added_at'].'</td>

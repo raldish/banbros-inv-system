@@ -205,6 +205,7 @@
                         <th>Location</th>
                         <th>Model Description</th>
                         <th>Serial Number</th>
+                        <th>Cost</th>
                         <th>Quantity</th>
                         <th>Status</th>
                         <th>Added at</th>
@@ -238,6 +239,7 @@
                                 echo "<td>" . $row['location_n'] . "</td>";
                                 echo "<td>" . $row['model_description'] . "</td>";
                                 echo "<td>" . $row['serial_number'] . "</td>";
+                                echo "<td>" . $row['cost'] . "</td>";
                                 echo "<td>" . $row['quantity'] . "</td>";
                                 echo "<td>" . $row['con_dition'] . "</td>";
                                 echo "<td>" . $row['added_at'] . "</td>";

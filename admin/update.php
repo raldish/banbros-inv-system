@@ -11,10 +11,11 @@
         $location_n = $_POST['location_n'];
         $model_description = $_POST['model_description'];
         $serial_number = $_POST['serial_number'];
+        $cost = $_POST['cost'];
         $quantity = $_POST['quantity'];
         $con_dition = $_POST['con_dition'];
 
-        $sql ="UPDATE client SET company_code='$company_code', assigned_to='$assigned_to', firstname='$firstname', middlename='$middlename', surname='$surname', location_n='$location_n', model_description='$model_description', serial_number='$serial_number', quantity='$quantity', con_dition='$con_dition' WHERE ID='$id'";
+        $sql ="UPDATE client SET company_code='$company_code', assigned_to='$assigned_to', firstname='$firstname', middlename='$middlename', surname='$surname', location_n='$location_n', model_description='$model_description', serial_number='$serial_number', cost='$cost', quantity='$quantity', con_dition='$con_dition' WHERE ID='$id'";
         
         if($conn->query($sql)){
             $_SESSION['success'] = "Record has been updated successfully";

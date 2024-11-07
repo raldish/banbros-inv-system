@@ -31,6 +31,7 @@ $surname = $data['surname'];
 $location_n = $data['location_n'];
 $model_description = $data['model_description'];
 $serial_number = $data['serial_number'];
+$cost = $data['cost'];
 $quantity = $data['quantity'];
 $con_dition = $data['con_dition'];
 
@@ -69,6 +70,10 @@ $pdf->Cell(100, 10, '' . $con_dition);
 $pdf->SetFont('Arial', '', 8); // set font size to 8
 $pdf->SetXY(118, 67); // Set position for another piece of data
 $pdf->Cell(100, 10, '' . $serial_number);
+
+$pdf->SetFont('Arial', '', 12); // set font size to 8
+$pdf->SetXY(94, 67); // Set position for another piece of data
+$pdf->Cell(100, 10, '' . $cost);
 
 $pdf->SetFont('Arial', '', 12); // set font size to 8
 $pdf->SetXY(75, 67); // Set position for another piece of data

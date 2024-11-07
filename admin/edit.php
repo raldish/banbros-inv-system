@@ -156,6 +156,10 @@
                         <td><input type="text" value="<?=$row['serial_number']; ?>" name="serial_number" required></td>
                     </tr>
                     <tr>
+                        <td>Cost</td>
+                        <td><input type="text" value="<?=$row['cost']; ?>" name="cost" required></td>
+                    </tr>
+                    <tr>
                         <td>Quantity</td>
                         <td><input type="text" value="<?=$row['quantity']; ?>" name="quantity" required></td>
                     </tr>

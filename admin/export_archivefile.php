@@ -28,6 +28,7 @@ if ($result) {
           <th>Location</th>
           <th>Model Description</th>
           <th>Serial Number</th>
+          <th>Cost</th>
           <th>Quantity</th>
           <th>Status</th>
           <th>Added at</th>
@@ -46,6 +47,7 @@ if ($result) {
           <td>" . $row['location_n'] . "</td>
           <td>" . $row['model_description'] . "</td>
           <td>" . $row['serial_number'] . "</td>
+          <td>" . $row['cost'] . "</td>
           <td>" . $row['quantity'] . "</td>
           <td>" . $row['con_dition'] . "</td>
           <td>" . $row['added_at'] . "</td>

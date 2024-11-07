@@ -19,7 +19,7 @@
                   <td>
                     <input type="text" name="firstname" placeholder="First Name" required>
                     <input type="text" name="middlename" placeholder="Middle Name" required>
-                    <input type="text" name="middlename" placeholder="Middle Name" required>
+                    <input type="text" name="surname" placeholder="Surname" required>
                   </td>
                 </tr>
                 <tr>
@@ -38,6 +38,9 @@
                 </tr>
                 <tr>
                     <td>Serial Number<input type="text" name="serial_number" placeholder="NXE*********" required></td>
+                </tr>
+                <tr>
+                    <td>Cost<input type="text" name="cost" placeholder="Enter cost" required></td>
                 </tr>
                 <tr>
                   <td>Quantity<input type="text" name="quantity" placeholder="Quantity" required></td>
