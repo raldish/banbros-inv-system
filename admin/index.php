@@ -267,6 +267,13 @@
 
                         <?php } ?>
                     </tbody>
+
+                    <?php
+                        $total_employees = mysqli_query($conn, "SELECT COUNT(DISTINCT CONCAT(firstname, ' ', middlename, ' ', surname)) AS total_employees FROM client");
+                        $row = mysqli_fetch_assoc($total_employees);
+                        $total_employees = $row['total_employees'];
+                    ?>
+
                     <!-- Modal code --> 
                     <td colspan="13">
                     <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
