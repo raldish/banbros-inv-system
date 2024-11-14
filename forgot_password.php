@@ -43,10 +43,10 @@ if (isset($_POST['forgot_password'])) {
         if (!$mail->send()) {
             echo 'Error sending email: ' . $mail->ErrorInfo;
         } else {
-            echo 'Email sent successfully!';
+            echo "<div id='success-message' style='background:green; color:#fff; padding:3px; border-radius:25px; font-size:15px; text-align:center;'>Email sent successfully!</div>";
         }
     } else {
-        echo "Username and email do not match.";
+        echo "<div id='error-message' style='background:red; color:#fff; padding:3px; border-radius:25px; font-size:15px; text-align:center;'>Username and email do not match.</div>";
     }
 }
 ?>
