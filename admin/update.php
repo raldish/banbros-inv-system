@@ -15,12 +15,20 @@
         $quantity = $_POST['quantity'];
         $con_dition = $_POST['con_dition'];
 
-        $sql ="UPDATE client SET company_code='$company_code', assigned_to='$assigned_to', firstname='$firstname', middlename='$middlename', surname='$surname', location_n='$location_n', model_description='$model_description', serial_number='$serial_number', cost='$cost', quantity='$quantity', con_dition='$con_dition' WHERE ID='$id'";
-        
-        if($conn->query($sql)){
-            $_SESSION['success'] = "Record has been updated successfully";
-        }else
-            $_SESSION['error'] = "Something went wrong while updating record";
+        // Check if serial number already exists
+        $check_serial_query = "SELECT * FROM client WHERE serial_number = '$serial_number' AND ID != '$id'";
+        $check_serial_result = $conn->query($check_serial_query);
+
+        if($check_serial_result->num_rows > 0){
+            $_SESSION['error'] = "Serial number already exists. Please use a different serial number.";
+        } else {
+            $sql ="UPDATE client SET company_code='$company_code', assigned_to='$assigned_to', firstname='$firstname', middlename='$middlename', surname='$surname', location_n='$location_n', model_description='$model_description', serial_number='$serial_number', cost='$cost', quantity='$quantity', con_dition='$con_dition' WHERE ID='$id'";
+            
+            if($conn->query($sql)){
+                $_SESSION['success'] = "Record has been updated successfully";
+            }else
+                $_SESSION['error'] = "Something went wrong while updating record";
         }
+    }
     header('location: index.php');
 ?>

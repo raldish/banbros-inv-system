@@ -10,10 +10,10 @@
       <form action="insert.php" method="post">
             <table width="100%" class="table border">
                 <tr>
-                    <td>Company Code<input type="text" name="company_code" placeholder="Company Code" required pattern="[A-Za-z0-9]+"></td>
+                    <td>Company Code<input type="text" name="company_code" placeholder="Company Code" required></td>
                 </tr>
                 <tr>
-                    <td>Employee #<input type="text" name="assigned_to" placeholder="Employee Number" required pattern="[A-Za-z0-9]+"></td>
+                    <td>Employee #<input type="text" name="assigned_to" placeholder="Employee Number" required></td>
                 </tr>
                 <tr>
                   <td>
