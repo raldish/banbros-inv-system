@@ -143,6 +143,9 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <?php if($_SESSION['role'] == 'admin'){ ?>
+        <li><a href="create_account.php" class="btn custom-btn"><span class="fa fa-user" style="color:white;"></span> Create User</a></li>
+        <?php } ?>
+        <?php if($_SESSION['role'] == 'admin'){ ?>
         <!-- <li class="active"><a href="#">Dashboard <span class="sr-only">(current)</span></a></li> -->
         <li><a href="#add" data-toggle="modal" class="btn custom-btn"><span class="fa fa-plus" style="color:white;" ></span> Add New</a></li>
         <?php } ?>
@@ -291,9 +294,9 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <p>Number of Employees: <?=$total_employees?></p>
-                                    <p>Total GOOD: <?=$total_good?></p>
-                                    <p>Total DEFECTED: <?=$total_defected?></p>
+                                    <p>Number of Employees: <?=$total_employees?> <span class="btn-info">Result </span></p>
+                                    <p>Total GOOD: <?=$total_good?> <span class="btn-success">Good </span></p>
+                                    <p>Total DEFECTED: <?=$total_defected?> <span class="btn-danger">Defected </span></p>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>

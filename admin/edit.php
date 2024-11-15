@@ -118,23 +118,23 @@
                     </tr>
                     <tr>
                         <td>Company Code</td>
-                        <td><input type="text" value="<?=$row['company_code']; ?>" name="company_code"></td>
+                        <td><input type="text" value="<?=$row['company_code']; ?>" name="company_code"  required pattern="[A-Za-z0-9]+"></td>
                     </tr>
                     <tr>
                         <td>Employee #</td>
-                        <td><input type="text" value="<?=$row['assigned_to']; ?>" name="assigned_to"></td>
+                        <td><input type="text" value="<?=$row['assigned_to']; ?>" name="assigned_to" required pattern="[A-Za-z0-9]+"></td>
                     </tr>
                     <tr>
                         <td>First Name</td>
-                        <td><input type="text" value="<?=$row['firstname']; ?>" name="firstname"></td>
+                        <td><input type="text" value="<?=$row['firstname']; ?>" name="firstname" required pattern="[A-Za-z0-9]+"></td>
                     </tr>
                     <tr>
                         <td>Middle Name</td>
-                        <td><input type="text" value="<?=$row['middlename']; ?>" name="middlename"></td>
+                        <td><input type="text" value="<?=$row['middlename']; ?>" name="middlename" required pattern="[A-Za-z0-9]+"></td>
                     </tr>
                     <tr>
                         <td>Surname</td>
-                        <td><input type="text" value="<?=$row['surname']; ?>" name="surname"></td>
+                        <td><input type="text" value="<?=$row['surname']; ?>" name="surname" required pattern="[A-Za-z0-9]+"></td>
                     </tr>
                     <tr>
                         <td><label for="location_n">Location</label></td>
@@ -149,19 +149,19 @@
                     </tr>
                     <tr>
                         <td>Model Description</td>
-                        <td><input type="text" value="<?=$row['model_description']; ?>" name="model_description" required></td>
+                        <td><input type="text" value="<?=$row['model_description']; ?>" name="model_description" required pattern="[A-Za-z0-9]+"></td>
                     </tr>
                     <tr>
                         <td>Serial Number</td>
-                        <td><input type="text" value="<?=$row['serial_number']; ?>" name="serial_number" required></td>
+                        <td><input type="text" value="<?=$row['serial_number']; ?>" name="serial_number" required pattern="[A-Za-z0-9]+"></td>
                     </tr>
                     <tr>
                         <td>Cost</td>
-                        <td><input type="text" value="<?=$row['cost']; ?>" name="cost" required></td>
+                        <td><input type="text" value="<?=$row['cost']; ?>" name="cost" required pattern="[A-Za-z0-9]+"></td>
                     </tr>
                     <tr>
                         <td>Quantity</td>
-                        <td><input type="text" value="<?=$row['quantity']; ?>" name="quantity" required></td>
+                        <td><input type="text" value="<?=$row['quantity']; ?>" name="quantity" required pattern="[A-Za-z0-9]+"></td>
                     </tr>
                     <tr>
                     <td>Status</td>

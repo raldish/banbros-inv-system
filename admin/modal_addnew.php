@@ -10,16 +10,16 @@
       <form action="insert.php" method="post">
             <table width="100%" class="table border">
                 <tr>
-                    <td>Company Code<input type="text" name="company_code" placeholder="Company Code" required></td>
+                    <td>Company Code<input type="text" name="company_code" placeholder="Company Code" required pattern="[A-Za-z0-9]+"></td>
                 </tr>
                 <tr>
-                    <td>Employee #<input type="text" name="assigned_to" placeholder="Employee Number" required></td>
+                    <td>Employee #<input type="text" name="assigned_to" placeholder="Employee Number" required pattern="[A-Za-z0-9]+"></td>
                 </tr>
                 <tr>
                   <td>
-                    <input type="text" name="firstname" placeholder="First Name" required>
-                    <input type="text" name="middlename" placeholder="Middle Name" required>
-                    <input type="text" name="surname" placeholder="Surname" required>
+                    <input type="text" name="firstname" placeholder="First Name" required pattern="[A-Za-z0-9]+">
+                    <input type="text" name="middlename" placeholder="Middle Name" required pattern="[A-Za-z0-9]+">
+                    <input type="text" name="surname" placeholder="Surname" required pattern="[A-Za-z0-9]+">
                   </td>
                 </tr>
                 <tr>
@@ -34,16 +34,16 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Model Description<input type="text" name="model_description" placeholder="Model Description" required></td>
+                    <td>Model Description<input type="text" name="model_description" placeholder="Model Description" required pattern="[A-Za-z0-9]+"></td>
                 </tr>
                 <tr>
-                    <td>Serial Number<input type="text" name="serial_number" placeholder="NXE*********" required></td>
+                <td>Serial Number<input type="text" name="serial_number" placeholder="NXE*********" required pattern="[A-Za-z0-9]+"></td>
                 </tr>
                 <tr>
-                    <td>Cost<input type="text" name="cost" placeholder="Enter cost" required></td>
+                    <td>Cost<input type="text" name="cost" placeholder="Enter cost" required pattern="[A-Za-z0-9]+"></td>
                 </tr>
                 <tr>
-                  <td>Quantity<input type="text" name="quantity" placeholder="Quantity" required></td>
+                  <td>Quantity<input type="text" name="quantity" placeholder="Quantity" required pattern="[A-Za-z0-9]+"></td>
                 </tr>
                 <tr>
                     <td>
