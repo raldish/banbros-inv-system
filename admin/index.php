@@ -144,7 +144,7 @@
       <ul class="nav navbar-nav">
       <?php if($_SESSION['role'] == 'admin'){ ?>
         <!-- <li class="active"><a href="#">Dashboard <span class="sr-only">(current)</span></a></li> -->
-        <li><a href="#createUserModal" data-toggle="modal" class="btn custom-btn"><span class="fa fa-user" style="color:white;" ></span> Create User</a></li>
+        <li><a href="create_account.php" class="btn custom-btn"><span class="fa fa-user" style="color:white;" ></span> Create User</a></li>
         <?php } ?>
         <?php if($_SESSION['role'] == 'admin'){ ?>
         <!-- <li class="active"><a href="#">Dashboard <span class="sr-only">(current)</span></a></li> -->
