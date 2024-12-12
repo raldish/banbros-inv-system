@@ -13,6 +13,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST["password"];
     $name = $_POST["name"];
     $confirm_password = $_POST["confirm_password"];
+    $email = $_POST["email"];
+
 
     // Check if passwords match
     if ($password != $confirm_password) {
@@ -34,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     // Insert user into database
-    $query = "INSERT INTO user (username, password, name) VALUES ('$username', '$password', '$name')";
+    $query = "INSERT INTO user (username, password, name, email) VALUES ('$username', '$password', '$name', '$email')";
     $result = mysqli_query($conn, $query);
 
     if ($result) {
