@@ -124,13 +124,13 @@
 <?php } ?>
     <div id="divheader">
         <a href="index.php"  class="btn btn-primary" style="margin-bottom:10px">Back</a>
-                    <form action="signup.php" method="POST">
+            <form action="signup.php" method="POST">
                         <!-- <p align ="right">
                         <button type="submit" class="btn btn-primary" style="align-items:Center">Create Account</button></p> -->
-                        <table width="100%">
-                        <tr>
+                    <table width="100%">
+                    <tr>
                             <td>Username</td>
-                            <td><input type="password" class="form-control" id="password" name="password" placeholder="Enter Password" required></td>
+                            <td><input type="text" class="form-control" id="username" name="username" placeholder="Enter Username" required></td>
                         </tr>
                         <tr>
                             <td>Password</td>
@@ -151,7 +151,7 @@
                         <tr>
                             <td><button type="submit" id="submit" name="change_password" style="margin-left:10px;">Create Account</button></td>
                         </tr>
-                </table>
+                    </table>
             </form>
         </div>
     </div>
