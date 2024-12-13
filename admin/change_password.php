@@ -156,8 +156,8 @@ if (isset($_POST['change_password'])) {
     </div>
 <?php } ?>
     <div id="divheader">
-            <form action="" method="post">
-            <a href="index.php"  class="btn btn-primary">Back</a>
+        <form action="" method="post">
+            <a href="index.php"  class="btn btn-primary" style="margin-bottom:10px">Back</a>
                 <table width="100%">
                         <tr>
                             <td>Old Password</td>
